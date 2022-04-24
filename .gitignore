@@ -41,6 +41,3 @@ __MACOSX
 
 # record
 aws_record
-
-#folder
-s3_downloads
