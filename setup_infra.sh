@@ -155,7 +155,6 @@ CREATE TABLE public.user_behavior_metric (
 );" > ./redshift_setup.sql
 
 psql -f ./redshift_setup.sql postgres://$REDSHIFT_USER:$REDSHIFT_PASSWORD@$REDSHIFT_HOST:$REDSHIFT_PORT/dev
-rm ./redshift_setup.sql
 
 echo "adding redshift connections to Airflow connection param"
 docker exec -d user_behavior-airflow-webserver-1 airflow connections add 'redshift' --conn-type 'Postgres' --conn-login $REDSHIFT_USER --conn-password $REDSHIFT_PASSWORD --conn-host $REDSHIFT_HOST --conn-port $REDSHIFT_PORT --conn-schema 'dev'

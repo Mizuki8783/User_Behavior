@@ -38,3 +38,4 @@ aws iam delete-role --role-name $IAM_ROLE_NAME  --output text >> tear_down.log
 
 rm -f tear_down.log setup.log trust-policy.json
 rm -rf __MACOSX logs plugins temp
+rm ./redshift_setup.sql
